@@ -13,9 +13,8 @@ const orders = [
 
 app.get('/orders', async (req, res) => {
   try {
-    const users = await axios.get('http://localhost:3001/users');
-    const products = await axios.get('http://localhost:3002/products');
-
+    const users = await axios.get('http://user-container:3001/users');
+    const products = await axios.get('http://product-container:3002/products');
     res.json({
       orders,
       users: users.data,
